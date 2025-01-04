@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+:root {
+  /*--primary--*/
+  --Light-red: hsl(0, 100%, 67%);
+  --bg-clr-red: hsla(0, 100%, 67%, 0.2);
+  --Orangey-yellow: hsl(39, 100%, 56%);
+  --bg-clr-orange: hsla(39, 100%, 56%, 0.2);
+  --Green-teal: hsl(166, 100%, 37%);
+  --bg-clr-green: hsla(166, 100%, 37%, 0.2);
+  --Cobalt-blue: hsl(234, 85%, 45%);
+  --bg-clr-blue: hsla(234, 85%, 45%, 0.2);
+
+  /*--gradients background--*/
+  --Light-slate-blue: hsl(252, 100%, 67%);
+  --Light-royal-blue: hsl(241, 81%, 54%);
+
+  /*--gradients circle--*/
+  --Violet-blue: hsla(256, 72%, 46%, 1);
+  --Persian-blue: hsla(241, 72%, 46%, 0);
+  --clr-circle: linear-gradient(to bottom, var(--Violet-blue), var(--Persian-blue) 80%);
+  /*--neutral--*/
+  --White: hsl(0, 0%, 100%);
+  --clr-text: hsla(0, 0%, 100%, 0.7);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Light-lavender: hsl(241, 100%, 89%);
+  --Dark-gray-blue: hsl(224, 30%, 27%);
+  --clr-shadow: hsla(224, 30%, 27%, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--Dark-gray-blue);
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    place-items: center;
+  }
+}
+
+.grid-flow {
+  display: grid;
+  align-items: start;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--White);
+  background-color: var(--Dark-gray-blue);
+  border: none;
+  border-radius: 100vw;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+button:focus-visible {
+  background-image: linear-gradient(
+    to bottom,
+    var(--Light-slate-blue),
+    var(--Light-royal-blue)
+  );
+}
+
+#result-summary {
+  max-width: 46rem;
+  display: grid;
+  margin: 0 1rem;
+  --border-radius: 2rem;
+  --padding: 2.4rem;
+}
+
+@media screen and (min-width: 600px) {
+  #result-summary {
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0.5rem 1rem 3rem var(--clr-shadow);
+  }
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  background-image: linear-gradient(
+    to bottom,
+    var(--Light-slate-blue),
+    var(--Light-royal-blue)
+  );
+  color: var(--clr-text);
+  text-align: center;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+}
+
+@media screen and (max-width: 600px) {
+  .result {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+}
+
+.result-score {
+    width: 12rem;
+    margin: auto 0;
+    background-image: linear-gradient(
+    to bottom,
+    var(--Violet-blue) 20%,
+    var(--Persian-blue) 96%
+  );
+  align-content: center;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.result-score span {
+    display: block; 
+    font-size: 3.6rem;
+    font-weight: 800;
+}
+
+.result-grade {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.result-status {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0 .8rem;
+}
+
+.summary {
+  padding: var(--padding);
+}
+
+.summary-item{
+  background-color: var(--bg-clr-red);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  
+}
+ 
+
+
+.summary-item:nth-child(2) {
+    background-color: var(--bg-clr-orange);
+  
+  }
+
+  .summary-item:nth-child(3) {
+    background-color: var(--bg-clr-green);
+  
+  }
+
+  .summary-item:last-child {
+    background-color: var(--bg-clr-blue);
+  
+  }  
+
+.summary-item-tile {
+  color: var(--Light-red);
+}
+
+.summary-item:nth-child(2) .summary-item-tile {
+    color: var(--Orangey-yellow);
+  }
+
+  .summary-item:nth-child(3) .summary-item-tile {
+    color: var(--Green-teal);
+  }
+
+  .summary-item:last-child .summary-item-tile {
+    color: var(--Cobalt-blue);
+  }
+
+  .flex-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+  }
+  
+  .flex-group svg{
+      stroke: var(--Light-red);
+  }
+  
+   .summmary-icon {
+      width: 2rem;
+      height: 2rem;
+      margin-right: .5rem;
+      border-radius: .5rem;
+      
+  }
+
+
+.summary-score span {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
